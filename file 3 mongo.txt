@@ -1,0 +1,146 @@
+
+> show dbs
+CS4DS   0.000GB
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use CS4DS
+switched to db CS4DS
+> show collections
+TASK3
+> get task3
+2019-10-31T17:23:59.817+0100 E  QUERY    [js] uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:4
+> db
+CS4DS
+> db.create('post')
+2019-10-31T17:24:34.208+0100 E  QUERY    [js] uncaught exception: TypeError: db.create is not a function :
+@(shell):1:1
+> db.createCollection('post')
+{ "ok" : 1 }
+> show collections
+TASK3
+post
+> db.createCollection('person')
+{ "ok" : 1 }
+> db.person.insert({
+...
+...
+> ;
+>
+>
+>
+>
+>
+> clear
+2019-10-31T17:30:48.636+0100 E  QUERY    [js] uncaught exception: ReferenceError: clear is not defined :
+@(shell):1:1
+>
+>
+>
+>
+> quit
+function quit() {
+    [native code]
+}
+>
+>
+>
+> db
+CS4DS
+>
+> d;da
+2019-10-31T17:31:06.832+0100 E  QUERY    [js] uncaught exception: ReferenceError: d is not defined :
+@(
+> db.post.insert({ name: "Hassan" , age: 30 , stuyding: "Masters in DS" }, )
+> db.post.insert({ name: "Hassan" , age: 30 , stuyding: "Masters in DS" }, )
+> db.post.insert({ name: "Hassan" , age: 30 , stuyding: "Masters in DS" }, )
+> db.post.insert({ name: "Hassan" , age: 30 , stuyding: "Masters in DS" })
+WriteResult({ "nInserted" : 1 })
+> db.post.insert({ name: "ALI" , age: 35 , stuyding: "Masters in CD" })
+WriteResult({ "nInserted" : 1 })
+> db.person.find()
+>
+> db
+CS4DS
+> db.post.find()
+{ "_id" : ObjectId("5dbb0c976352f3b6ece6be2b"), "name" : "Hassan", "age" : 30, "stuyding" : "Masters in DS" }
+{ "_id" : ObjectId("5dbb0d406352f3b6ece6be2c"), "name" : "Hassan", "age" : 30, "stuyding" : "Masters in DS" }
+{ "_id" : ObjectId("5dbb0d546352f3b6ece6be2d"), "name" : "ALI", "age" : 35, "stuyding" : "Masters in CD" }
+> clear()
+2019-10-31T17:40:31.106+0100 E  QUERY    [js] uncaught exception: ReferenceError: clear is not defined :
+@(shell):1:1
+> db.post.find().pretty()
+{
+        "_id" : ObjectId("5dbb0c976352f3b6ece6be2b"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+{
+        "_id" : ObjectId("5dbb0d406352f3b6ece6be2c"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+{
+        "_id" : ObjectId("5dbb0d546352f3b6ece6be2d"),
+        "name" : "ALI",
+        "age" : 35,
+        "stuyding" : "Masters in CD"
+}
+> db.post.find({age:30})
+{ "_id" : ObjectId("5dbb0c976352f3b6ece6be2b"), "name" : "Hassan", "age" : 30, "stuyding" : "Masters in DS" }
+{ "_id" : ObjectId("5dbb0d406352f3b6ece6be2c"), "name" : "Hassan", "age" : 30, "stuyding" : "Masters in DS" }
+> db.post.find({age:30}).pretty()
+{
+        "_id" : ObjectId("5dbb0c976352f3b6ece6be2b"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+{
+        "_id" : ObjectId("5dbb0d406352f3b6ece6be2c"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+> db.post.find().sort({ age: 1 }).pretty()
+{
+        "_id" : ObjectId("5dbb0c976352f3b6ece6be2b"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+{
+        "_id" : ObjectId("5dbb0d406352f3b6ece6be2c"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+{
+        "_id" : ObjectId("5dbb0d546352f3b6ece6be2d"),
+        "name" : "ALI",
+        "age" : 35,
+        "stuyding" : "Masters in CD"
+}
+> db.post.find().sort({ age: -1 }).pretty()
+{
+        "_id" : ObjectId("5dbb0d546352f3b6ece6be2d"),
+        "name" : "ALI",
+        "age" : 35,
+        "stuyding" : "Masters in CD"
+}
+{
+        "_id" : ObjectId("5dbb0c976352f3b6ece6be2b"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+{
+        "_id" : ObjectId("5dbb0d406352f3b6ece6be2c"),
+        "name" : "Hassan",
+        "age" : 30,
+        "stuyding" : "Masters in DS"
+}
+>
